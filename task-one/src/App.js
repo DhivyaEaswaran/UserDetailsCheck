@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+
+let userdata ={
+  name : "Dhivya",
+  imgurl:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Desktop_computer_clipart_-_Yellow_theme.svg/2560px-Desktop_computer_clipart_-_Yellow_theme.svg.png",
+  age: '28'
+}
+
+function Truevalue(){
+  return(<div>
+    <h1>Welcome:{userdata.name}</h1>
+    <img src ={userdata.imgurl} alt={'photo of the user: '+ userdata.name} width={"200px"}/>
+    <p>The age of the user is {userdata.age}</p>
+  </div>
+
+  );
+}
+function Falsyvalue(){
+  return(
+    <div>
+      <h1>Welcome user...</h1>
+      <img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png" alt='' width={"150px"}/>
+      <p>Age unknown</p>
+    </div>
+
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {userdata.name&&userdata.imgurl&&userdata.age ? <Truevalue/>: <Falsyvalue/>}
     </div>
+    
   );
 }
 
